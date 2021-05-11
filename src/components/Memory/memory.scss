@@ -1,0 +1,16 @@
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  //grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  grid-gap: 5px;
+
+  
+  .board-bord {
+    background: grey;
+    //text-align: center;
+    border: purple 8px solid;
+  }
+
+}

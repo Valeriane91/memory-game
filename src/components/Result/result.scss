@@ -1,0 +1,36 @@
+.result {
+
+  font-style: oblique;
+  font-weight: bold;
+  border: .5rem solid orange;
+  padding: 8em 8em;
+
+  .bravo {
+    border-radius: 30px;
+    font-size: 2.75em;
+    padding: .5em .5em;
+    text-align: center;
+    color:brown;
+    -webkit-transform: rotate(-6.85rad);
+    
+ }
+ .div {
+   margin: 1.5em 1.5em;
+   text-align: left;
+ }
+
+ .menu {
+  border-radius: 30px;
+  background-color: purple;
+  padding: 1em 1em;
+  color:white;
+  margin: .2em .2em;
+ }
+ .regame {
+  border-radius: 30px;
+  background-color: purple;
+  padding: 1em 1em;
+  color:white;
+  margin: .2em .2em;
+ }
+}
