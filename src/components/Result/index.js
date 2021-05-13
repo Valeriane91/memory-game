@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // ==Import
 import './result.scss';
@@ -14,8 +15,19 @@ const Result = () => (
       <div>Memory résusi en: xx cps</div>
       <div>Temps</div>
     </h2>
-    <button className="result-btn" type="button">MENU</button>
-    <button className="result-btn" type="button">REJOUER</button>
+    <nav>
+      <Link
+        to="/"
+      >
+        <button className="result-btn" type="button">MENU</button>
+      </Link>
+
+      <Link
+        to="/memory"
+      >
+        <button className="result-btn" type="button">REJOUER</button>
+      </Link>
+    </nav>
   </div>
 );
 

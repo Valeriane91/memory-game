@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 // ==Import
 import './option.scss';
 
@@ -12,7 +12,14 @@ const Option = () => (
     <div>VOIR LES CARTES</div>
     <div>NOMBRE DE CARTES</div>
     <div>VITESSE DES CARTES</div>
-    <button className="option-btn" type="button">JOUER</button>
+    <nav>
+      <Link
+        to="/memory"
+      >
+        <button className="option-btn" type="button">JOUER</button>
+      </Link>
+
+    </nav>
   </div>
 );
 
