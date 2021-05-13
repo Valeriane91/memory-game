@@ -14,8 +14,8 @@ const Result = () => (
       <div>Memory résusi en: xx cps</div>
       <div>Temps</div>
     </h2>
-    <h1 className="regame">REJOUER</h1>
-    <h1 className="menu">MENU</h1>
+    <button className="result-btn" type="button">MENU</button>
+    <button className="result-btn" type="button">REJOUER</button>
   </div>
 );
 

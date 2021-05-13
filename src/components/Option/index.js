@@ -12,7 +12,7 @@ const Option = () => (
     <div>VOIR LES CARTES</div>
     <div>NOMBRE DE CARTES</div>
     <div>VITESSE DES CARTES</div>
-    <h1 className="game">JOUER</h1>
+    <button className="option-btn" type="button">JOUER</button>
   </div>
 );
 
