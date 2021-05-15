@@ -10,6 +10,10 @@ import { render } from 'react-dom';
 // on importe un composant qui s'appel BrowserRouter mais on le renomme Router
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import 'semantic-ui-css/semantic.min.css';
+
+
+
 // == Import : local
 // Composants
 import App from 'src/components/App';

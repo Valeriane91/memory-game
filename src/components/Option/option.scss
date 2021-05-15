@@ -1,29 +1,21 @@
+@use 'src/styles/vars';
 
-.option {
-  font-style: oblique;
-  font-weight: bold;
-  border: .5rem solid green;
-  padding: 8em 8em;
 
-  .game {
-    border-radius: 30px;
-    background-color: purple;
-    padding: 1em 1em;
-    color:white;
-  }
+.ui.btn-game {
+  padding: 2em 4em;
+  text-align:center;
+  margin:auto;
+  display:flex;
+  border-radius: 30px;
+}
+.ui.header {
+text-align: center;
+width: 100%;
+}
 
- &-btn {
-   background-color: purple;
-   border: 0;
-   color: white;
-   padding: 1rem 1.5rem;
-   border-radius: 1em;
-   margin: 1rem 1rem;
-   min-width: 12em;
-   font-style: bold;
-   display: inline-block;
-   font-size: 1.8em bold;
- }
- 
+.ui.body {
+  text-align: center;
+  width: 100%;
 
 }
+

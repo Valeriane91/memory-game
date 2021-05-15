@@ -1,49 +1,24 @@
+@use 'src/styles/vars';
+
+
 .result {
 
-  font-style: oblique;
-  font-weight: bold;
-  border: .5rem solid orange;
-  padding: 8em 8em;
+  // border: .5rem solid hsl(39, 100%, 50%);
+  // padding: 7.5em 7.5em;
+  padding: vars.$gutter * 2;
+  text-align: center;
 
+ .ui.h1 {
+ font-weight: 3em;
+ }
 
- &-btn {
-  background-color: purple;
-  border: 0;
-  color: white;
-  padding: 1.5rem;
+ .ui.btn {
+  padding: 2em 6em;
   border-radius: 1em;
   margin: 1rem 1rem;
-  min-width: 12em;
-  font-size: 1em;
-  display: inline-block;
+  //min-width: 12em;
+  font-size: 2em;
+  font-weight: vars.$global-font-weight;
 }
 
-  .bravo {
-    border-radius: 30px;
-    font-size: 2.75em;
-    padding: .5em .5em;
-    text-align: center;
-    color:brown;
-    -webkit-transform: rotate(-6.85rad);
-    
- }
- .div {
-   margin: 1.5em 1.5em;
-   text-align: left;
- }
-
- .menu {
-  border-radius: 30px;
-  background-color: purple;
-  padding: 1em 1em;
-  color:white;
-  margin: .2em .2em;
- }
- .regame {
-  border-radius: 30px;
-  background-color: purple;
-  padding: 1em 1em;
-  color:white;
-  margin: .2em .2em;
- }
 }
