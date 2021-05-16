@@ -31,6 +31,7 @@ const Option = ({ onChange, checked }) => (
                   <Checkbox
                     toggle
                     label="OUI"
+
                   />
                 </Table.Cell>
               </Table.Row>
@@ -46,7 +47,6 @@ const Option = ({ onChange, checked }) => (
                     toggle
                     label="Temps court"
                     name="checkboxRadioGroup"
-
                   />
                 </Table.Cell>
                 <Table.Cell collapsing>
@@ -54,7 +54,6 @@ const Option = ({ onChange, checked }) => (
                     toggle
                     label="Temps long"
                     name="checkboxRadioGroup"
-
                   />
                 </Table.Cell>
                 <Table.Cell collapsing>
@@ -69,7 +68,8 @@ const Option = ({ onChange, checked }) => (
                     toggle
                     label="Bouton"
                     name="checkboxRadioGroup"
-
+                    checked={checked}
+                    onChange={onChange}
                   />
                 </Table.Cell>
               </Table.Row>
@@ -78,8 +78,8 @@ const Option = ({ onChange, checked }) => (
         </div>
       </div>
 
-      <Table color="brown" inverted collapsing>
-        <Table.Header>
+      <Table color="brown" inverted collapsing >
+        <Table.Header collapsing>
           <Table.Row>
             <Table.HeaderCell />
             <Table.HeaderCell>Vitesse des cartes</Table.HeaderCell>
@@ -94,7 +94,7 @@ const Option = ({ onChange, checked }) => (
                 checked={checked}
                 onChange={onChange}
               />
-            </Table.Cell>
+            </Table.Cell >
             <Table.Cell>Lent</Table.Cell>
           </Table.Row>
           <Table.Row>
@@ -103,13 +103,13 @@ const Option = ({ onChange, checked }) => (
                 toggle
                 value="normal"
                 checked={checked}
-                onChange={onChange}
+                onChange={onChange}  
               />
             </Table.Cell>
             <Table.Cell>Normal</Table.Cell>
           </Table.Row>
           <Table.Row>
-            <Table.Cell collapsing>
+            <Table.Cell collapsing >
               <Checkbox
                 toggle
                 value="rapide"
@@ -152,7 +152,6 @@ const Option = ({ onChange, checked }) => (
                   toggle
                   name="checkboxRadioGroup"
                   value="this"
-                  checked
                   onChange
                 />
               </Table.Cell>
@@ -164,7 +163,6 @@ const Option = ({ onChange, checked }) => (
                   toggle
                   name="checkboxRadioGroup"
                   value="this"
-                  checked
                   onChange
                 />
               </Table.Cell>
@@ -176,7 +174,6 @@ const Option = ({ onChange, checked }) => (
                   toggle
                   name="checkboxRadioGroup"
                   value="this"
-                  checked
                   onChange
                 />
               </Table.Cell>
@@ -188,7 +185,6 @@ const Option = ({ onChange, checked }) => (
                   toggle
                   name="checkboxRadioGroup"
                   value="this"
-                  checked
                   onChange
                 />
               </Table.Cell>
@@ -200,7 +196,6 @@ const Option = ({ onChange, checked }) => (
                   toggle
                   name="checkboxRadioGroup"
                   value="this"
-                  checked
                   onChange
                 />
               </Table.Cell>
@@ -212,7 +207,6 @@ const Option = ({ onChange, checked }) => (
                   toggle
                   name="checkboxRadioGroup"
                   value="this"
-                  checked
                   onChange
                 />
               </Table.Cell>
@@ -260,7 +254,6 @@ const Option = ({ onChange, checked }) => (
                   toggle
                   name="checkboxRadioGroup"
                   value="this"
-                  checked
                   onChange
                 />
               </Table.Cell>
