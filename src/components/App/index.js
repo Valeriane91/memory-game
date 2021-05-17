@@ -29,22 +29,19 @@ const App = () => {
   const [list, setList] = useState([]);
   const [visibleCards, setVisibleCards] = useState([]);
   const [finishedCards, setFinishedCards] = useState([]);
-  
 
   const checkCards = (firstIndex, secondIndex) => {
     if (
-      firstIndex !== secondIndex
-      && list[firstIndex].url === list[secondIndex].url
+      firstIndex !== secondIndex &&
+      list[firstIndex].url === list[secondIndex].url
     ) {
       setFinishedCards([...finishedCards, firstIndex, secondIndex]);
-    }
-    else {
+    } else {
       setTimeout(() => {
         setVisibleCards([]);
       }, 600);
     }
   };
-
   useEffect(
     () => {
       axios
@@ -70,8 +67,9 @@ const App = () => {
           );
         });
     },
-   [newGame],
+    [newGame],
   );
+
 
   return (
 
@@ -93,7 +91,7 @@ const App = () => {
           visibleCardss={visibleCards}
           setVisibleCards={setVisibleCards}
           finishedCards={finishedCards}
-          checkICards={checkCards}
+          checkCards={checkCards}
         />
       </Route>
       <Route path="/result">

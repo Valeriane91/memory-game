@@ -50,9 +50,9 @@ const Result = () => (
           />
         </Link>
       </div>
-
     </nav>
   </div>
+
 );
 
 // == Export
