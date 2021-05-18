@@ -30,13 +30,6 @@ const App = () => {
   const [visibleCards, setVisibleCards] = useState([]);
   const [finishedCards, setFinishedCards] = useState([]);
 
-  handleChange(event) {
-    this.setState({
-      selectedOption: event.target.value,
-    });
-  }
-
-
   const checkCards = (firstIndex, secondIndex) => {
     if (
       firstIndex !== secondIndex
@@ -50,9 +43,6 @@ const App = () => {
       }, 600);
     }
   };
-
-
-
   useEffect(
     () => {
       axios
@@ -87,8 +77,7 @@ const App = () => {
       <HeaderMem />
       <Route path="/" exact>
         <Option
-          handleChange={this.handleChange}
-
+          handleChange={handleChange}
         />
       </Route>
       <Route path="/memory">
@@ -105,6 +94,7 @@ const App = () => {
       </Route>
 
     </div>
+
   );
 };
 

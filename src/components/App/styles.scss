@@ -1,16 +1,6 @@
 
-@use 'src/styles/vars';
 
 .app {
-  /**font-family: vars.$global-font;
-  font-weight: vars.$global-font-weight;
-  
+  width: 850px;
   margin: 0 auto;
-  background-color: #ecf0f1;
-  padding: 1rem;
-  min-height: 100vh;*/
-
-  display: block;
-  padding: 10vh 0;
-  background: linear-gradient(#cecece, #eaaaea);
 }

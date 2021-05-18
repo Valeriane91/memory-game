@@ -1,271 +1,176 @@
-// Composant TEST
 // == Import npm
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'semantic-ui-css';
 // ==Import
 import './option.scss';
-import { Checkbox, Table, Button } from 'semantic-ui-react';
+import {
+  Checkbox, Table, Form,
+} from 'semantic-ui-react';
 
 // == Composant
 
-const Option = ({ onChange, checked }) => (
+class Option extends React.Component {
+  // eslint-disable-next-line no-useless-constructor
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'non',
+    };
+  }
 
-  <div className="column">
+handleChange = (e) => {
+  this.setState({ value: e.target.value });
+}
 
-    <div className="ui equal width center aligned padded grid">
-      <div className="row">
-        <div className="column">
-          <Table className="header" color="brown" inverted collapsing>
-            <Table.Header className="header-table" collapsing>
+render() {
+  const { value } = this.state;
+  return (
+    <div className="column">
+      <div className="row1">
+        <Form>
+          <Table color="blue" inverted collapsing>
+            <Table.Header collapsing>
               Je souhaite voir les cartes avant de jouer
             </Table.Header>
-            <Table.Body className="body">
+            <Table.Body className="seecard">
               <Table.Row>
                 <Table.Cell collapsing>
-                  <Checkbox
-                    toggle
-                    label="NON"
-                  />
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      value="non"
+                      checked={value === 'non'}
+                      onChange={this.handleChange}
+                    />
+                    NON
+                  </Form.Field>
                 </Table.Cell>
                 <Table.Cell collapsing>
-                  <Checkbox
-                    toggle
-                    label="OUI"
-
-                  />
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      value="oui"
+                      checked={value === 'oui'}
+                      onChange={this.handleChange}
+                    />
+                    OUI
+                  </Form.Field>
                 </Table.Cell>
               </Table.Row>
             </Table.Body>
-
             <Table.Header className="header-table">
               Chronométrer le visionnage
             </Table.Header>
             <Table.Body>
               <Table.Row>
                 <Table.Cell collapsing>
-                  <Checkbox
-                    toggle
-                    label="Temps court"
-                    name="checkboxRadioGroup"
-                  />
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      type="radio"
+                      value="tempsc"
+                      checked={value === 'tempsc'}
+                      onChange={this.handleChange}
+                    />
+                    Temps court
+                  </Form.Field>
                 </Table.Cell>
                 <Table.Cell collapsing>
-                  <Checkbox
-                    toggle
-                    label="Temps long"
-                    name="checkboxRadioGroup"
-                  />
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      value="tempsm"
+                      checked={value === 'tempsm'}
+                      onChange={this.handleChange}
+                    />
+                    Temps moyen
+                  </Form.Field>
                 </Table.Cell>
                 <Table.Cell collapsing>
-                  <Checkbox
-                    toggle
-                    label="Temps long"
-                    name="checkboxRadioGroup"
-                  />
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      value="tempsl"
+                      checked={value === 'tempsl'}
+                      onChange={this.handleChange}
+                    />
+                    Temps long
+                  </Form.Field>
                 </Table.Cell>
                 <Table.Cell collapsing>
-                  <Checkbox
-                    toggle
-                    label="Bouton"
-                    name="checkboxRadioGroup"
-                    checked={checked}
-                    onChange={onChange}
-                  />
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      value="boutton"
+                      checked={value === 'boutton'}
+                      onChange={this.handleChange}
+                    />
+                    Boutton
+                  </Form.Field>
                 </Table.Cell>
               </Table.Row>
             </Table.Body>
           </Table>
-        </div>
+        </Form>
       </div>
 
-      <Table color="brown" inverted collapsing >
-        <Table.Header collapsing>
-          <Table.Row>
-            <Table.HeaderCell />
-            <Table.HeaderCell>Vitesse des cartes</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell collapsing>
-              <Checkbox
-                toggle
-                value="lent"
-                checked={checked}
-                onChange={onChange}
-              />
-            </Table.Cell >
-            <Table.Cell>Lent</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell collapsing>
-              <Checkbox
-                toggle
-                value="normal"
-                checked={checked}
-                onChange={onChange}  
-              />
-            </Table.Cell>
-            <Table.Cell>Normal</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell collapsing >
-              <Checkbox
-                toggle
-                value="rapide"
-                checked={checked}
-                onChange={onChange}
-              />
-            </Table.Cell>
-            <Table.Cell>Rapide</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
-    </div>
-
-    <div className="row">
-      <div className="column">
-        <Link to="/memory">
-          <Button
-            className="btn-game"
-            color="purple"
-            size="massive"
-          > JOUER
-          </Button>
-        </Link>
+      <div>
+        <Form>
+          <Table className="row2" color="black" inverted collapsing>
+            <Table.Header collapsing>
+              <Table.Row>
+                <Table.HeaderCell />
+                <Table.HeaderCell>Vitesse des cartes</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell collapsing>
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      value="lent"
+                      checked={this.state.selectedOption === 'lent'}
+                      onChange={this.handleChange}
+                    />
+                  </Form.Field>
+                </Table.Cell>
+                <Table.Cell>Lent</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell collapsing>
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      value="normal"
+                      checked={this.state.selectedOption === 'normal'}
+                      onChange={this.handleChange}
+                    />
+                  </Form.Field>
+                </Table.Cell>
+                <Table.Cell>Normal</Table.Cell>
+              </Table.Row>
+              <Table.Row>
+                <Table.Cell collapsing>
+                  <Form.Field>
+                    <Checkbox
+                      toggle
+                      value="rapide"
+                      checked={this.state.selectedOption === 'rapide'}
+                      onChange={this.handleChange}
+                    />
+                  </Form.Field>
+                </Table.Cell>
+                <Table.Cell>Rapide</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
+        </Form>
       </div>
     </div>
-
-    <div className="row">
-      <div className="column">
-        <Table color="brown" inverted collapsing>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell />
-              <Table.HeaderCell>Choix du nombre de cartes</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            <Table.Row>
-              <Table.Cell collapsing>
-                <Checkbox
-                  toggle
-                  name="checkboxRadioGroup"
-                  value="this"
-                  onChange
-                />
-              </Table.Cell>
-              <Table.Cell>6 cartes</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell collapsing>
-                <Checkbox
-                  toggle
-                  name="checkboxRadioGroup"
-                  value="this"
-                  onChange
-                />
-              </Table.Cell>
-              <Table.Cell>8 cartes</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell collapsing>
-                <Checkbox
-                  toggle
-                  name="checkboxRadioGroup"
-                  value="this"
-                  onChange
-                />
-              </Table.Cell>
-              <Table.Cell>12 cartes</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell collapsing>
-                <Checkbox
-                  toggle
-                  name="checkboxRadioGroup"
-                  value="this"
-                  onChange
-                />
-              </Table.Cell>
-              <Table.Cell>16 cartes</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell collapsing>
-                <Checkbox
-                  toggle
-                  name="checkboxRadioGroup"
-                  value="this"
-                  onChange
-                />
-              </Table.Cell>
-              <Table.Cell>20 cartes</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell collapsing>
-                <Checkbox
-                  toggle
-                  name="checkboxRadioGroup"
-                  value="this"
-                  onChange
-                />
-              </Table.Cell>
-              <Table.Cell>24 cartes</Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table>
-      </div>
-      <div className="column">
-        <Table color="brown" inverted collapsing>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell />
-              <Table.HeaderCell>Choix du memory</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            <Table.Row>
-              <Table.Cell collapsing>
-                <Checkbox
-                  toggle
-                  name="checkboxRadioGroup"
-                  value="this"
-                  onChange
-                />
-              </Table.Cell>
-              <Table.Cell>Images/Mots</Table.Cell>
-            </Table.Row>
-
-            <Table.Row>
-              <Table.Cell collapsing>
-                <Checkbox
-                  toggle
-                  name="checkboxRadioGroup"
-                  value="this"
-                  onChange
-                />
-              </Table.Cell>
-              <Table.Cell>Images/Images</Table.Cell>
-            </Table.Row>
-
-            <Table.Row>
-              <Table.Cell collapsing>
-                <Checkbox
-                  toggle
-                  name="checkboxRadioGroup"
-                  value="this"
-                  onChange
-                />
-              </Table.Cell>
-              <Table.Cell>Mots/Mots</Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table>
-      </div>
-    </div>
-  </div>
-
-);
+  );
+}
+}
 
 // == Export
 export default Option;

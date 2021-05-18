@@ -1,21 +1,13 @@
 
-.card-img {
-  height: 100px;
-  transform: rotateY(180deg) perspective(100px); 
-  transition: .5s;
-
-}
-
-.card-show {
-  &::after {
-    transform: rotateY(180deg) perspective(100px);
-  }
-
-  .card-img {
-    transform: rotateY(0) perspective(100px);
-  }
-}
-
-.card-finished {
-  opacity: .5;
+.card {
+  border: black;
+  border-style: solid;
+  background-color: red;
+  height: 130px;
+  width: 100px;
+  border-radius: .75em;
+  margin: 1em 1em;
+  // float permet à un élément d'être retiré du flux normal et doit être placé sur le côté droit ou gauche de son conteneur
+  // L'élément est retiré du flux normal de la page mais reste dans le flux (contrairement au positionnement absolu).
+  float: left;
 }
