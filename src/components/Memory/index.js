@@ -8,6 +8,7 @@ import Footer from 'src/components/Footer';
 // == Composant
 
 const Memory = () => {
+
   const colors = ['yellow', 'red', 'black',
     'green', 'grey', 'blue',
     'brown', 'orange', 'purple',
@@ -19,8 +20,7 @@ const Memory = () => {
         <div className="board">
           <Card memo={color} />
           <Card memo={color} />
-
-        </div>
+        </div> 
       ))}
       <div>
         <Footer />

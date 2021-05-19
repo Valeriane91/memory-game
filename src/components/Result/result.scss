@@ -13,12 +13,15 @@
  }
 
  .ui.btn {
+  bottom: 0;
   padding: 2em 6em;
   border-radius: 1em;
-  margin: 1rem 1rem;
+  //margin: 1rem 1rem;
   //min-width: 12em;
   font-size: 2em;
   font-weight: vars.$global-font-weight;
+  position:absolute;
+  padding-top:50px;
 }
 
 }

@@ -18,14 +18,22 @@ class Card extends React.Component {
   }
 
   retourNer() {
-    this.setState({
-      deface: !this.state.deface });
-    console.log(`la carte est retournée ${this.state.deface}`);
+    this.setState({ deface: !this.state.deface });
+    // console.log(`la carte est retournée ${this.state.deface}`);
   }
 
   render() {
+    let memo;
+    console.log(`coucou ${this.props.memo}`);
+    if (this.state.deface) {
+      memo = 'Pile';
+    }
+    else {
+      memo = this.props.memo;
+    }
+
     return (
-      <div className="card" onClick={this.retourNer}> Pile</div>
+      <div className="card" onClick={this.retourNer}> {memo}</div>
     );
   }
 }
