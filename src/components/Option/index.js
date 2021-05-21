@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // ==Import
 import './option.scss';
 
-import { Container, Button, Grid } from 'semantic-ui-react';
+import { Container, Button } from 'semantic-ui-react';
 // == Composant
 
 // const Option = () => (
