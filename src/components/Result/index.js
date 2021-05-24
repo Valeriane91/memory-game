@@ -1,56 +1,50 @@
 // == Import npm
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { Button } from 'semantic-ui-react';
+// https://material-ui.com/components/dialogs/
+// yarn add @material-ui/core
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
 
-import { Button, Header } from 'semantic-ui-react';
 // ==Import
 import './result.scss';
 
 // == Composant
 
-const Result = () => (
-  <div className="result">
-    <Header width={16} color="green" as="h1">
-      BRAVO !
-    </Header>
-
-    <Header as="h2">Nombre de cartes: xx</Header>
-    <Header as="h2">Memory réussi en: xx cps</Header>
-    <Header as="h2">Temps</Header>
-
-    <nav>
-      <div>
-        <Link
-          to="/memory"
-        >
-
-          <Button
-            className="btn"
-            labelPosition="right"
-            icon="right chevron"
-            color="brown"
-            size="massive"
-            floated="right"
-            content="REJOUER"
-          />
-        </Link>
-      </div>
-      <div>
-        <Link
-          to="/"
-        >
-          <Button
-            className="btn"
-            labelPosition="left"
-            icon="left chevron"
-            color="purple"
-            size="massive"
-            floated="left"
-            content="MENU"
-          />
-        </Link>
-      </div>
-    </nav>
+const Result = ({
+  restartGame,
+  coups,
+  showResult,
+  timer,
+  formatTime,
+  isPaused,
+  isActive,
+}) => (
+  <div>
+    <Dialog
+      open={showResult}
+      isPaused={isPaused}
+      disableBackdropClick
+      disableEscapeKeyDown
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+    >
+      <h1 className="h1"> Bravo !!! Tu as fini le memory !</h1>
+      <DialogContent>
+        <DialogContentText id="alert-dialog-description" >  
+          <p> Memory réussi en: {coups} coups </p>
+          <p> Temps : {formatTime(timer)} </p>
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button color="primary" onClick={restartGame} disable={!isActive}>
+          REJOUER
+        </Button>
+      </DialogActions>
+    </Dialog>
   </div>
 
 );

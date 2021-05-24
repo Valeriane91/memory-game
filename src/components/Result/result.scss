@@ -1,27 +1,32 @@
 @use 'src/styles/vars';
 
+// voir documentation: https://material-ui.com/api/dialog/
 
-.result {
 
-  // border: .5rem solid hsl(39, 100%, 50%);
-  // padding: 7.5em 7.5em;
-  padding: vars.$gutter * 2;
+.MuiDialog-paperWidthSm {
+  width: 100%;
+  // background-color: rgb(142, 208, 212) !important; 
+  background: radial-gradient(
+    rgb(210, 85, 226) 60%,
+    rgba(18, 221, 194, 0.664)
+  );
+
+  border-radius: 3rem;
   text-align: center;
-
- .ui.h1 {
- font-weight: 3em;
- }
-
- .ui.btn {
-  bottom: 0;
-  padding: 2em 6em;
-  border-radius: 1em;
-  //margin: 1rem 1rem;
-  //min-width: 12em;
-  font-size: 2em;
-  font-weight: vars.$global-font-weight;
-  position:absolute;
-  padding-top:50px;
 }
 
+
+.MuiDialogContentText-root {
+  font-size: 3em;
+  margin-top: 15px;
 }
+
+.h1 {
+ font-size: 55px;
+  color: rgb(129, 216, 129);
+}
+
+.MuiButton-label:hover {
+  color: rgb(202, 35, 211);
+}
+

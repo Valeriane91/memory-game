@@ -1,11 +1,11 @@
 
-.card {
-  border: white;
+/**.card {
+  border: 1rem;
   border-style: solid 8px;
-  background-color: pink;
-  height: 130px;
-  width: 100px;
-  border-radius: 2px;
+  background-color: rgb(95, 220, 224);
+  height: 150px;
+  width: 150px;
+  border-radius: 4px;
   padding: 1em 1em;
   margin: 1em 1em;
   // float permet à un élément d'être retiré du flux normal et doit être placé sur le côté droit ou gauche de son conteneur
@@ -16,7 +16,23 @@ transition: transform 0.8s;
 
 }
 
-.card.deface {
+.card.pile {
   background-color: yellow;
   transform: rotateY(180deg);
+}*/
+
+
+.backCard,
+.frontCard {
+  width: 150px;
+  height: 150px;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color:  rgb(95, 220, 224);
+  margin: 1em 1em;
+
+  // float permet à un élément d'être retiré du flux normal et doit être placé sur le côté droit ou gauche de son conteneur
+  // L'élément est retiré du flux normal de la page mais reste dans le flux (contrairement au positionnement absolu).
+  float: left;
+
 }
